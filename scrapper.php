@@ -2,6 +2,7 @@
 
     // manga scrapper
     require_once 'simple_html_dom.php';
+
     $listmanga = file_get_html('https://sektekomik.com/manga/?list');
     $mangas = array();
     foreach($listmanga->find('div.soralist div.blix ul li') as $rawmanga) {
@@ -21,6 +22,7 @@
     foreach($mangas as $manga){
         $title = $manga['title'];
         $slug = $manga['slug'];
-        echo "<p>"+$title+" | "+$slug+"</p>"
+        echo "<p>"+$title+" | "+$slug+"</p>";
     }
+
 ?>
